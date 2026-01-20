@@ -1,0 +1,51 @@
+[
+    {
+      "id": "br-01",
+      "name": "Berry French Toast",
+      "category": "Brunch",
+      "price": 12.5,
+      "image": "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=800&q=80",
+      "description": "Brioche toast with mascarpone, fresh berries and maple syrup."
+    },
+    {
+      "id": "br-02",
+      "name": "Avocado on Sourdough",
+      "category": "Brunch",
+      "price": 10.0,
+      "image": "https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=800&q=80",
+      "description": "Smashed avocado, chili flakes, lemon and sourdough."
+    },
+    {
+      "id": "br-03",
+      "name": "Ricotta Hotcakes",
+      "category": "Brunch",
+      "price": 11.5,
+      "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80",
+      "description": "Fluffy hotcakes with whipped ricotta and seasonal fruit."
+    },
+    {
+      "id": "dr-01",
+      "name": "Flat White",
+      "category": "Drinks",
+      "price": 3.5,
+      "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80",
+      "description": "Single origin espresso with silky steamed milk."
+    },
+    {
+      "id": "dr-02",
+      "name": "Matcha Latte",
+      "category": "Drinks",
+      "price": 4.0,
+      "image": "https://images.unsplash.com/photo-1615485924997-7c7b6a3c1f8a?auto=format&fit=crop&w=800&q=80",
+      "description": "Ceremonial grade matcha with your choice of milk."
+    },
+    {
+      "id": "dr-03",
+      "name": "Iced Latte",
+      "category": "Drinks",
+      "price": 4.2,
+      "image": "https://images.unsplash.com/photo-1521305916504-4a1121188589?auto=format&fit=crop&w=800&q=80",
+      "description": "Chilled espresso over ice with cold milk."
+    }
+  ]
+  
