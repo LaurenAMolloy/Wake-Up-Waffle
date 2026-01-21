@@ -1,10 +1,11 @@
 import { BrowserRouter, RouterProvider, createBrowserRouter } from "react-router";
 import Root from "./pages/Root";
 import HomePage from "./pages/home/HomePage";
-import AboutPage from './pages/about/AboutPage';
+import DetailsPage from './pages/details/detailsPage'
 import CartPage from "./pages/cart/CartPage";
 import MenuPage from "./pages/menu/MenuPage";
 import { menuLoader } from "./pages/menu/menuLoader";
+import detailsLoader from "./pages/details/detailsLoader"
 
 //SET UP BROWSER ROUTER
 const router = createBrowserRouter([
@@ -18,8 +19,9 @@ const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        path: "/about",
-        element: <AboutPage />
+        path: "/details/:id",
+        element: <DetailsPage />,
+        loader: detailsLoader
       },
       {
         path: "/cart",

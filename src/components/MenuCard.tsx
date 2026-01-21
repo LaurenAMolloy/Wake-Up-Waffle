@@ -11,7 +11,7 @@ export default function MenuCard({ item }: MenuCardProps ) {
         <img className="rounded-2xl" src={item.image}></img>
         <h3>{item.name}</h3>
         <p>£{item.price}</p>
-        <Link to="/">More Details</Link>
+        <Link to={`/details/${item.id}`}>More Details</Link>
     </article>
   )
 }

@@ -1,7 +1,11 @@
-import React from 'react'
+import { useLoaderData } from 'react-router-dom';
+import type { DetailsLoaderResult} from './detailsLoader'
 
-export default function detailsPage() {
+export default function DetailsPage() {
+  const { item } = useLoaderData() as DetailsLoaderResult
+  console.log(item)
   return (
-    <div>detailsPage</div>
+    <div className="container mx-auto py-10">
+    </div>
   )
 }
