@@ -1,8 +1,38 @@
 @import "tailwindcss";
 
+:root {
+  /* Base neutrals */
+  --color-bg: #f5f5f4;
+  /* warm off-white */
+  --color-surface: #ffffff;
+  /* cards / panels */
+  --color-border: #e7e5e4;
+  /* subtle separators */
+
+  /* Greys */
+  --color-grey-900: #1c1917;
+  /* almost black (text) */
+  --color-grey-700: #44403c;
+  /* headings */
+  --color-grey-500: #78716c;
+  /* secondary text */
+  --color-grey-300: #d6d3d1;
+  /* outlines */
+
+  /* Accent (waffle warmth) */
+  --color-accent: #c9a24d;
+  /* soft maple gold */
+  --color-accent-muted: #e7d8a4;
+  /* hover / highlights */
+
+  /* UI states */
+  --color-primary: var(--color-accent);
+  --color-primary-hover: #b8943f;
+}
+
 body {
-  color: darkslategray;
-  background-color: beige;
+  color: var(--color-grey-900);
+  background-color: var(--color-bg);
   margin: 0;
   padding: 0;
 }

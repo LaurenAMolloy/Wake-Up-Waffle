@@ -11,6 +11,12 @@ export async function getItemSummary(): Promise<ItemSummary[]> {
         throw new Error("Failed to fetch menu")
     }
     const data = (await res.json()) as MenuResponse
-    return (data)
-
+    return data.map(({ id, name, image, price }) => {
+        return {
+            id,
+            name,
+            image,
+            price
+        }
+    });
 }
