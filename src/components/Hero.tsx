@@ -1,4 +1,5 @@
 import HeroImg from '../assets/herowaffle.jpg'
+import { Link } from 'react-router'
 
 export default function Hero() {
   return (
@@ -9,9 +10,9 @@ export default function Hero() {
         className="absolute inset-0 h-full w-full object-cover">
         </img>
 
-        <div className="absolute inset-0 bg/black/50"></div>
+        <div className="absolute inset-0 bg-black/70"></div>
 
-        <div className="relative z-10 flex h-full items-center justify-center text-center px-6">
+        <div className="relative z-10 flex h-full justify-center items-center text-center px-6">
         <div className="max-w-3xl text-white">
           <h1 className="text-4xl md:text-6xl font-bold leading-tight">
             Breakfast at Wake Up Waffles!
@@ -21,9 +22,9 @@ export default function Hero() {
           </p>
 
           <div className="mt-6 flex justify-center gap-4">
-            <button className="rounded-lg bg-white px-6 py-3 text-black font-semibold hover:bg-gray-200 transition">
+            <Link to={"/menu"} className="rounded-lg bg-white px-6 py-3 text-black font-semibold hover:bg-gray-200 transition">
               Menu
-            </button>
+            </Link>
           </div>
         </div>
       </div> 

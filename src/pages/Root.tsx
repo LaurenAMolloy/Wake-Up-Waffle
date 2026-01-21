@@ -6,7 +6,7 @@ export default function Root() {
   return (
     <div className="min-h-screen flex flex-col">
     <Header />
-    <div className='w-full'>
+    <div className='w-full flex-1'>
         <Outlet />
     </div>
     <Footer />
