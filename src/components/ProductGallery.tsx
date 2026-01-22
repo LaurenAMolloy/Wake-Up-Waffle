@@ -1,7 +1,10 @@
-import React from 'react'
+type ProductGalleryProps = {
+    image: string;
+    name: string;
+}
 
-export default function ProductGallery() {
+export default function ProductGallery({ image, name }: ProductGalleryProps) {
   return (
-    <div>ProductGallery</div>
+        <img className="rounded-2xl" src={image} alt={name}></img>
   )
 }
