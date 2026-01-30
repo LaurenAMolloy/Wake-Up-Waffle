@@ -12,7 +12,7 @@ export default function NavBar() {
   }
 
   return (
-    <div className="flex items-center justify-between min-h-14 bg-slate-300 p-3">
+    <div className="flex items-center justify-between min-h-14 bg-gray-900 p-3">
       {/* logo */}
       <Link to="/">
         <img height={50} width={50} src={WaffleLogo}></img>
@@ -38,7 +38,7 @@ export default function NavBar() {
           {isOpen ? <ImCross size={42} /> : <RxHamburgerMenu size={42} />}
       </button>
 
-      <div className={`fixed top-0 left-0 w-[60%] h-screen bg-slate-300 md:hidden z-50 transition-all duration-500 ease-in
+      <div className={`fixed top-0 left-0 w-[60%] h-screen bg-grey-900 md:hidden z-50 transition-all duration-500 ease-in
       ${isOpen ? 'translate-x-0' : '-translate-x-full' }`}>
         <p>link</p>
         <p>link</p>

@@ -8,10 +8,10 @@ type MenuCardProps = {
 export default function MenuCard({ item }: MenuCardProps ) {
   return (
     <article className="flex flex-col gap-3 bg-[#ffffff] rounded-2xl p-3 shadow-xl/20 ">
-        <img className="rounded-2xl" src={item.image}></img>
+        <img className=" w-full aspect-4/3 rounded-2xl object-cover object-center"  src={item.image} alt={item.name}></img>
         <h3>{item.name}</h3>
         <p>£{item.price}</p>
-        <Link to={`/details/${item.id}`}>More Details</Link>
+        <Link className='bg-[#c9a24d] rounded-2xl text-center p-2 hover:bg-[#b8943f]' to={`/details/${item.id}`}>More Details</Link>
     </article>
   )
 }

@@ -1,51 +1,126 @@
 [
-    {
-      "id": "br-01",
-      "name": "Berry French Toast",
-      "category": "Brunch",
-      "price": 12.5,
-      "image": "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=800&q=80",
-      "description": "Brioche toast with mascarpone, fresh berries and maple syrup."
-    },
-    {
-      "id": "br-02",
-      "name": "Avocado on Sourdough",
-      "category": "Brunch",
-      "price": 10.0,
-      "image": "https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=800&q=80",
-      "description": "Smashed avocado, chili flakes, lemon and sourdough."
-    },
-    {
-      "id": "br-03",
-      "name": "Ricotta Hotcakes",
-      "category": "Brunch",
-      "price": 11.5,
-      "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80",
-      "description": "Fluffy hotcakes with whipped ricotta and seasonal fruit."
-    },
-    {
-      "id": "dr-01",
-      "name": "Flat White",
-      "category": "Drinks",
-      "price": 3.5,
-      "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80",
-      "description": "Single origin espresso with silky steamed milk."
-    },
-    {
-      "id": "dr-02",
-      "name": "Matcha Latte",
-      "category": "Drinks",
-      "price": 4.0,
-      "image": "https://images.unsplash.com/photo-1615485924997-7c7b6a3c1f8a?auto=format&fit=crop&w=800&q=80",
-      "description": "Ceremonial grade matcha with your choice of milk."
-    },
-    {
-      "id": "dr-03",
-      "name": "Iced Latte",
-      "category": "Drinks",
-      "price": 4.2,
-      "image": "https://images.unsplash.com/photo-1521305916504-4a1121188589?auto=format&fit=crop&w=800&q=80",
-      "description": "Chilled espresso over ice with cold milk."
-    }
-  ]
+  {
+    "id": "br-01",
+    "name": "Berry French Toast",
+    "category": "Brunch",
+    "price": 12.5,
+    "image": "https://images.unsplash.com/photo-1664192578370-0cd2b291c4cd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGZyZW5jaCUyMHRvYXN0fGVufDB8fDB8fHww",
+    "description": "Brioche toast with mascarpone, fresh berries and maple syrup."
+  },
+  {
+    "id": "br-02",
+    "name": "Avocado on Sourdough",
+    "category": "Brunch",
+    "price": 10.0,
+    "image": "https://images.unsplash.com/photo-1687276287139-88f7333c8ca4?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "description": "Smashed avocado, chili flakes, lemon and sourdough."
+  },
+  {
+    "id": "br-03",
+    "name": "Ricotta Hotcakes",
+    "category": "Brunch",
+    "price": 11.5,
+    "image": "https://images.unsplash.com/photo-1573405618462-1a85b3ac7bac?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "description": "Fluffy hotcakes with whipped ricotta and seasonal fruit."
+  },
+  {
+    "id": "br-04",
+    "name": "Eggs Benedict",
+    "category": "Brunch",
+    "price": 13.0,
+    "image": "https://images.unsplash.com/photo-1674315604997-bc5fcaa1ac32?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "description": "Poached eggs, smoked ham and hollandaise on an English muffin."
+  },
+  {
+    "id": "br-05",
+    "name": "Breakfast Burrito",
+    "category": "Brunch",
+    "price": 11.0,
+    "image": "https://images.unsplash.com/photo-1635107420756-9f930ed6c97b?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "description": "Scrambled eggs, cheese, roasted veggies and salsa in a warm tortilla."
+  },
+
+  {
+    "id": "dr-01",
+    "name": "Flat White",
+    "category": "Drinks",
+    "price": 3.5,
+    "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80",
+    "description": "Single origin espresso with silky steamed milk."
+  },
+  {
+    "id": "dr-02",
+    "name": "Matcha Latte",
+    "category": "Drinks",
+    "price": 4.0,
+    "image": "https://images.unsplash.com/photo-1582785513054-8d1bf9d69c1a?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "description": "Ceremonial grade matcha with your choice of milk."
+  },
+  {
+    "id": "dr-03",
+    "name": "Iced Latte",
+    "category": "Drinks",
+    "price": 4.2,
+    "image": "https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aWNlZCUyMGxhdHRlfGVufDB8fDB8fHww",
+    "description": "Chilled espresso over ice with cold milk."
+  },
+  {
+    "id": "dr-04",
+    "name": "Fresh Orange Juice",
+    "category": "Drinks",
+    "price": 3.8,
+    "image": "https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZnJlc2glMjBqdWljZXxlbnwwfHwwfHx8MA%3D%3D",
+    "description": "Freshly squeezed oranges served cold."
+  },
+  {
+    "id": "dr-05",
+    "name": "Chai Latte",
+    "category": "Drinks",
+    "price": 4.0,
+    "image": "https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y2hhaSUyMGxhdHRlfGVufDB8fDB8fHww",
+    "description": "Spiced black tea with steamed milk and honey."
+  },
+
+  {
+    "id": "sn-01",
+    "name": "Butter Croissant",
+    "category": "Snacks",
+    "price": 3.0,
+    "image": "https://images.unsplash.com/photo-1681218079567-35aef7c8e7e4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YnV0dGVyJTIwY3JvaXNzYW50fGVufDB8fDB8fHww",
+    "description": "Flaky, buttery croissant baked fresh daily."
+  },
+  {
+    "id": "sn-02",
+    "name": "Blueberry Muffin",
+    "category": "Snacks",
+    "price": 3.2,
+    "image": "https://images.unsplash.com/photo-1607958996333-41aef7caefaa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Ymx1ZWJlcnJ5JTIwbXVmZmlufGVufDB8fDB8fHww",
+    "description": "Soft muffin packed with juicy blueberries."
+  },
+  {
+    "id": "sn-03",
+    "name": "Banana Bread",
+    "category": "Snacks",
+    "price": 3.5,
+    "image": "https://images.unsplash.com/photo-1696259459108-7a8f4896b3e2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YmFubmFuYSUyMGJyZWFkfGVufDB8fDB8fHww",
+    "description": "Moist banana bread with a hint of cinnamon."
+  },
+  {
+    "id": "sn-04",
+    "name": "Granola Yogurt Cup",
+    "category": "Snacks",
+    "price": 4.5,
+    "image": "https://images.unsplash.com/photo-1719077518819-9ddbc5c6ef62?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z3Jhbm9sYSUyMHlvZ3VydCUyMGN1cHxlbnwwfHwwfHx8MA%3D%3D",
+    "description": "Greek yogurt with house-made granola and honey."
+  },
+  {
+    "id": "sn-05",
+    "name": "Chocolate Chip Cookie",
+    "category": "Snacks",
+    "price": 2.5,
+    "image": "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y29va2llfGVufDB8fDB8fHww",
+    "description": "Soft-baked cookie loaded with chocolate chips."
+  }
+]
+
   

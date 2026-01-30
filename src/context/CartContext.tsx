@@ -26,10 +26,13 @@ type CartAction =
     | { type: 'DECREMENT_ITEM'; payload: { id: string } }
     | { type: 'INCREMENT_ITEM'; payload: { id: string } }
 
+//We need to tell Typescript what exists in this context!
 type CartContextType = {
     cart: CartItem[];
     addToCart: (product: Product, quantity: number) => void;
     deleteFromCart: (id: string) => void;
+    incrementItem: (id: string) => void;
+    decrementItem: (id: string) => void;
 }
 //Cart Reducer
 //cart is the initial state
@@ -109,15 +112,27 @@ export function CartProvider({children}: CartProviderProps) {
         })
     };
 
+    function incrementItem(id: string) {
+        dispatch({
+            type: 'INCREMENT_ITEM',
+            payload: { id },
+        })
+    };
+
+    function decrementItem(id: string) {
+        dispatch({
+            type: 'DECREMENT_ITEM',
+            payload: { id },
+        })
+    }
 
     return (
-      <CartContext.Provider value={{ cart, addToCart, deleteFromCart, }}> 
+      <CartContext.Provider value={{ cart, addToCart, deleteFromCart, incrementItem, decrementItem }}> 
             {children}
       </CartContext.Provider> 
     ) 
 }
 
-
 //values to be added from app?
-export const CartContext = createContext<CartContextType | null>(null);
+export const CartContext = createContext<CartContextType | undefined>(undefined);
 
