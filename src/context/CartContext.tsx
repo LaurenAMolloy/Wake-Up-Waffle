@@ -1,24 +1,14 @@
 //Combine Reducers with Context
 import { createContext, useReducer } from 'react';
 import type { ReactNode } from 'react';
+import type { CartItem } from '../types/cart';
+import type { Product } from '../types/product';
+import type { CartContextType } from '../types/cart';
 
 type CartProviderProps = {
     children: ReactNode;
 };
 
-type Product = {
-    id: String,
-    name: String,
-    description: String,
-    image: String,
-    price: Number,
-}
-
-type CartItem = {
-    id: string;
-    product: any;
-    quantity: number;
-}
 
 type CartAction = 
     | { type: 'ADD_ITEM'; payload: { product: any, quantity: number } }
@@ -26,14 +16,7 @@ type CartAction =
     | { type: 'DECREMENT_ITEM'; payload: { id: string } }
     | { type: 'INCREMENT_ITEM'; payload: { id: string } }
 
-//We need to tell Typescript what exists in this context!
-type CartContextType = {
-    cart: CartItem[];
-    addToCart: (product: Product, quantity: number) => void;
-    deleteFromCart: (id: string) => void;
-    incrementItem: (id: string) => void;
-    decrementItem: (id: string) => void;
-}
+
 //Cart Reducer
 //cart is the initial state
 //action describes what happens
@@ -133,6 +116,6 @@ export function CartProvider({children}: CartProviderProps) {
     ) 
 }
 
-//values to be added from app?
+//we need to turn this into a hook to guarantee to typescript that this is not undefined
 export const CartContext = createContext<CartContextType | undefined>(undefined);
 

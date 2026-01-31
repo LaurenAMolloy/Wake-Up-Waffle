@@ -1,7 +1,8 @@
+
 type ProductInfoProps = {
   name: string,
   description: string,
-  price: string,
+  price: number,
 }
 
 export default function ProductInfo({ name, description, price } : ProductInfoProps) {

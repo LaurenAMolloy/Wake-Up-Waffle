@@ -35,10 +35,10 @@ export default function NavBar() {
         aria-label="Toggle navigation"
         className="md:hidden cursor-pointer"
         >
-          {isOpen ? <ImCross size={42} /> : <RxHamburgerMenu size={42} />}
+          {isOpen ? <ImCross className="text-white" size={42} /> : <RxHamburgerMenu className="text-white" size={42} />}
       </button>
 
-      <div className={`fixed top-0 left-0 w-[60%] h-screen bg-grey-900 md:hidden z-50 transition-all duration-500 ease-in
+      <div className={`fixed top-0 left-0 w-[60%] h-screen bg-gray-900 md:hidden z-50 transition-all duration-500 ease-in
       ${isOpen ? 'translate-x-0' : '-translate-x-full' }`}>
         <p>link</p>
         <p>link</p>

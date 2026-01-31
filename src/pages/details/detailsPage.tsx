@@ -8,7 +8,6 @@ export default function DetailsPage() {
   const { item } = useLoaderData() as DetailsLoaderResult
   //console.log(item)
   const { 
-    id,
     image,
     name,
     description,
@@ -17,15 +16,14 @@ export default function DetailsPage() {
 
   return (
     <div className="container flex flex-col px-10 items-center mt-10 gap-3">
-      <ProductGallery image={image} name={name} />
+      <ProductGallery
+      name={name}
+      image={image} />
       <ProductInfo
       name={name}
       description={description}
       price={price}  />
-      <AddToCartSection 
-      id={id}
-      price={price}
-      name={name} />
+      <AddToCartSection product={item} />
     </div>
   )
 }
