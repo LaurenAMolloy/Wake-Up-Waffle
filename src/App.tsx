@@ -6,7 +6,7 @@ import CartPage from "./pages/cart/CartPage";
 import MenuPage from "./pages/menu/MenuPage";
 import { menuLoader } from "./pages/menu/menuLoader";
 import detailsLoader from "./pages/details/detailsLoader";
-import { CartProvider } from "./context/CartContext";
+import { CartProvider } from "./context/CartProvider";
 
 //SET UP BROWSER ROUTER
 const router = createBrowserRouter([

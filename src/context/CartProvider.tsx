@@ -1,15 +1,20 @@
 //Combine Reducers with Context
-import { createContext, useReducer } from 'react';
+import { useReducer, useEffect } from 'react';
 import type { ReactNode } from 'react';
 import type { CartItem } from '../types/cart';
 import type { Product } from '../types/product';
-import type { CartContextType } from '../types/cart';
+import { CartContext } from './CartContext';
+
+const initCart = () => {
+    const storedCart = localStorage.getItem("cart");
+    return storedCart ? JSON.parse(storedCart) : []
+}
 
 type CartProviderProps = {
     children: ReactNode;
 };
 
-
+//This is our contract!
 type CartAction = 
     | { type: 'ADD_ITEM'; payload: { product: any, quantity: number } }
     | { type: 'DELETE_ITEM'; payload: { id: string } }
@@ -17,54 +22,45 @@ type CartAction =
     | { type: 'INCREMENT_ITEM'; payload: { id: string } }
 
 
-//Cart Reducer
-//cart is the initial state
-//action describes what happens
 function cartReducer(cart: CartItem[], action: CartAction) {
     switch(action.type) {
       case 'ADD_ITEM':{
-        //Find existing item
         const existingItem = cart.find(
-            item => item.id === action.payload.product.id
+            item => item.product.id === action.payload.product.id
         )
 
-        //if item in cart update quantity
         if(existingItem) {
             return cart.map(item => 
-            item.id === action.payload.product.id ? {...item, quantity: item.quantity + action.payload.quantity} : item
+            item.product.id === action.payload.product.id ? {...item, quantity: item.quantity + action.payload.quantity} : item
         )}
 
         return [
             ...cart,
-            {
-                id: action.payload.product.id,
+            {  
                 product: action.payload.product,
-                quantity: 1,
+                quantity: action.payload.quantity,
             },
         ];
       }
 
+
       case 'DELETE_ITEM': {
-        //Return cart with everything but this...
-        return cart.filter(item => item.id !== action.payload.id)
+        return cart.filter(item => item.product.id !== action.payload.id)
       }
 
       case 'DECREMENT_ITEM': {
-        //REDUCE THE QUANITY
-        //IF QUANTITY IS 0 DELETE ITEM
         return cart
         .map(item =>
-            item.id === action.payload.id
+            item.product.id === action.payload.id
             ? { ...item, quantity: item.quantity - 1}
             : item)
-            //RETURN ITEMS WITH Q BIGGER THAN 0
             .filter(item => item.quantity > 0)
       }
+
       case 'INCREMENT_ITEM': {
-        //INCREASE THE QUANITY
         return cart
         .map(item =>
-            item.id === action.payload.id
+            item.product.id === action.payload.id
             ? { ...item, quantity: item.quantity + 1}
             : item)
       }
@@ -76,10 +72,15 @@ function cartReducer(cart: CartItem[], action: CartAction) {
 
 
 export function CartProvider({children}: CartProviderProps) {
-    //cart initial state is an empty array
-    const[cart, dispatch] = useReducer(cartReducer, []);
+    //lazy initializer only runs once
+    const[cart, dispatch] = useReducer(cartReducer, [], initCart);
+    console.log(cart)
 
-    //add or update an object
+    useEffect(() => {
+        localStorage.setItem("cart", JSON.stringify(cart))
+    }, [cart]);
+
+    
     function addToCart(product: Product, quantity: number) {
         dispatch({
             type: 'ADD_ITEM',
@@ -87,11 +88,10 @@ export function CartProvider({children}: CartProviderProps) {
         })
     };
 
-    //remove from cart remove an object
     function deleteFromCart(id: string) {
         dispatch({
             type: 'DELETE_ITEM',
-            payload: {id},
+            payload: { id },
         })
     };
 
@@ -116,6 +116,5 @@ export function CartProvider({children}: CartProviderProps) {
     ) 
 }
 
-//we need to turn this into a hook to guarantee to typescript that this is not undefined
-export const CartContext = createContext<CartContextType | undefined>(undefined);
+
 

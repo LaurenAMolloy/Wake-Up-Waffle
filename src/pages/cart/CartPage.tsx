@@ -1,7 +1,50 @@
-import React from 'react'
+import { TiDeleteOutline } from "react-icons/ti";
+import { useCart } from "../../context/useCart";
+import { FaMinusCircle } from "react-icons/fa";
+import { FaCirclePlus } from "react-icons/fa6";
 
 export default function CartPage() {
+  const { cart, deleteFromCart } = useCart();
+
+  const cartLength = cart.length
+  
+  const totalOrder = cart.reduce((total, item) => {
+  return total + item.product.price
+  }, 0)
+  
+  const renderedCartItems = cart.map((item) => {
+    return (
+      <div key={item.product.name}>
+        <p className="font-bold text-xl pb-2">{item.product.name}</p>
+          <div className="flex items-center justify-between pb-3">
+            <div className="flex items-center gap-6">
+              <span className="font-bold text-[#c9a24d] text-xl">{item.quantity}x</span><span>@ {item.product.price} {item.product.price * item.quantity}</span>
+            </div>
+            <div className="flex gap-3">
+              <FaMinusCircle
+              className="text-[#78716c] hover:text-[#c9a24d] transition" size={22} 
+              />
+              <FaCirclePlus 
+              className="text-[#78716c] hover:text-[#c9a24d] transition" size={22} 
+             />
+            </div>
+            <TiDeleteOutline className="text-[#a8a29e] hover:text-red-500 transition"  size={35} onClick={() => deleteFromCart(item.product.id)} />
+          </div>
+          <hr></hr>
+      </div>
+    )
+  })
+
   return (
-    <div>CartPage</div>
+    <div className="flex flex-col items-center pb-10 pt-10">
+      <h1 className="text-[#44403c] text-2xl font-bold pb-4">Your Cart({cartLength})</h1>
+      <div className="flex flex-col gap-8 pt-5 bg-[#ffffff] p-5 rounded-2xl shadow-2xl w-4/5">
+        {renderedCartItems}
+        <div className="flex justify-between">
+        <p>Order Total:</p><span className="font-bold">{totalOrder}</span>
+      </div>
+      <button className="bg-[#c9a24d] p-4 rounded-2xl hover:bg-[#b8943f]">Confirm Order</button>
+      </div>
+    </div>
   )
 }
