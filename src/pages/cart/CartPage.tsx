@@ -1,17 +1,38 @@
-import { TiDeleteOutline } from "react-icons/ti";
+import { useState } from 'react'
 import { useCart } from "../../context/useCart";
+import { TiDeleteOutline } from "react-icons/ti";
 import { FaMinusCircle } from "react-icons/fa";
 import { FaCirclePlus } from "react-icons/fa6";
+import Modal from '../../components/Modal';
+import { Link } from 'react-router-dom';
 
 export default function CartPage() {
   const { cart, deleteFromCart } = useCart();
+  const [showModal, setShowModal] = useState(false);
 
   const cartLength = cart.length
   
   const totalOrder = cart.reduce((total, item) => {
   return total + item.product.price
-  }, 0)
+  }, 0);
+
+  const handleClick = () => {
+    setShowModal(true);
+  }
+
+  const handleClose = () => {
+    setShowModal(false);
+  }
+
+  const confirmationBar = 
+  <div>
+    <Link to="/">Start New Order</Link>
+  </div>
   
+  const modal = <Modal onClose={handleClose} confirmationBar={confirmationBar}>
+    <p>Your order has been successful</p>
+  </Modal>
+
   const renderedCartItems = cart.map((item) => {
     return (
       <div key={item.product.name}>
@@ -43,7 +64,8 @@ export default function CartPage() {
         <div className="flex justify-between">
         <p>Order Total:</p><span className="font-bold">{totalOrder}</span>
       </div>
-      <button className="bg-[#c9a24d] p-4 rounded-2xl hover:bg-[#b8943f]">Confirm Order</button>
+      <button onClick={handleClick} className="bg-[#c9a24d] p-4 rounded-2xl hover:bg-[#b8943f]">Confirm Order</button>
+      {showModal && modal}
       </div>
     </div>
   )
