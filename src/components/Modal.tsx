@@ -2,12 +2,15 @@ import ReactDOM from 'react-dom';
 import { useEffect } from 'react';
 import type { ReactNode } from 'react';
 
+
+
 interface ModalProps {
+    onClose: () => void;
     children: ReactNode;
     confirmationBar?: ReactNode;
 }
 
-export default function Modal({ children, confirmationBar }: ModalProps) {
+export default function Modal({ onClose, children, confirmationBar }: ModalProps) {
 
     useEffect(() => {
         document.body.classList.add('overflow-hidden');
@@ -16,7 +19,7 @@ export default function Modal({ children, confirmationBar }: ModalProps) {
             document.body.classList.remove('overflow-hidden')
         }
     }, []);
-    
+
   return ReactDOM.createPortal (
     <div>
         <div
@@ -24,7 +27,7 @@ export default function Modal({ children, confirmationBar }: ModalProps) {
         onClick={(e) => e.stopPropagation()}
         ></div>
         <div className="fixed inset-40 p-10 bg-white">
-            <div className="flex flex-col justify-between h-full">
+            <div className="flex flex-col">
                 {children}
                 <div className="flex justify-end">{confirmationBar}</div>
             </div>

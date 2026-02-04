@@ -5,11 +5,13 @@ import { FaMinusCircle } from "react-icons/fa";
 import { FaCirclePlus } from "react-icons/fa6";
 import Modal from '../../components/Modal';
 import { Link } from 'react-router-dom';
+import { ImCross } from "react-icons/im";
 
 export default function CartPage() {
   const { cart, deleteFromCart } = useCart();
   const [showModal, setShowModal] = useState(false);
-
+  
+  //Add condition of cart is empty
   const cartLength = cart.length
   
   const totalOrder = cart.reduce((total, item) => {
@@ -30,6 +32,9 @@ export default function CartPage() {
   </div>
   
   const modal = <Modal onClose={handleClose} confirmationBar={confirmationBar}>
+    <ImCross 
+    size={24} 
+    className="absolute top-4 right-4 cursor-pointer text-gray-600 hover:text-black" onClick={handleClose} />
     <p>Your order has been successful</p>
   </Modal>
 
@@ -38,18 +43,19 @@ export default function CartPage() {
       <div key={item.product.name}>
         <p className="font-bold text-xl pb-2">{item.product.name}</p>
           <div className="flex items-center justify-between pb-3">
-            <div className="flex items-center gap-6">
-              <span className="font-bold text-[#c9a24d] text-xl">{item.quantity}x</span><span>@ {item.product.price} {item.product.price * item.quantity}</span>
+            <div className="flex items-center  gap-6">
+              <span className="font-bold text-[#c9a24d] text-xl">{item.quantity}x @ {item.product.price}</span><span className='font-bold'> {item.product.price * item.quantity}</span>
             </div>
-            <div className="flex gap-3">
+            <div className="flex gap-3 justify-center items-center">
               <FaMinusCircle
-              className="text-[#78716c] hover:text-[#c9a24d] transition" size={22} 
+              className="text-[#78716c] hover:text-[#c9a24d] transition" size={35} 
               />
               <FaCirclePlus 
-              className="text-[#78716c] hover:text-[#c9a24d] transition" size={22} 
+              className="text-[#78716c] hover:text-[#c9a24d] transition" size={35} 
              />
+              <TiDeleteOutline className="text-[#a8a29e] hover:text-red-500 transition"  size={45} onClick={() => deleteFromCart(item.product.id)} />
             </div>
-            <TiDeleteOutline className="text-[#a8a29e] hover:text-red-500 transition"  size={35} onClick={() => deleteFromCart(item.product.id)} />
+           
           </div>
           <hr></hr>
       </div>
@@ -57,9 +63,9 @@ export default function CartPage() {
   })
 
   return (
-    <div className="flex flex-col items-center pb-10 pt-10">
+    <div className="flex flex-col pb-10 pt-10 w-4/5">
       <h1 className="text-[#44403c] text-2xl font-bold pb-4">Your Cart({cartLength})</h1>
-      <div className="flex flex-col gap-8 pt-5 bg-[#ffffff] p-5 rounded-2xl shadow-2xl w-4/5">
+      <div className="flex flex-col gap-8 pt-5 bg-[#ffffff] p-5 rounded-2xl shadow-2xl w-full">
         {renderedCartItems}
         <div className="flex justify-between">
         <p>Order Total:</p><span className="font-bold">{totalOrder}</span>

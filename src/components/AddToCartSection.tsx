@@ -29,10 +29,10 @@ export default function AddToCartSection({ product }: AddToCartSectionProps ) {
         onClick={() =>  setQuantity(q => q + 1)} 
         size={42} />
       </div>
-      <div className="flex justify-evenly">
+      <div className="flex justify-evenly md:flex-col gap-3">
         {/* link to cart page here */}
         <Link to="/cart"
-        className="bg-[#c9a24d] p-4 rounded-2xl hover:bg-[#b8943f]" 
+        className="bg-[#c9a24d] p-4 rounded-2xl hover:bg-[#b8943f] text-center" 
         >Buy Now</Link>
         <button
         className="bg-[#c9a24d] p-4 rounded-2xl hover:bg-[#b8943f]" 
