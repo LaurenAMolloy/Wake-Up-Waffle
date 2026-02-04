@@ -20,6 +20,7 @@ export default function CartPage() {
 
   const handleClick = () => {
     setShowModal(true);
+    //empty cart
   }
 
   const handleClose = () => {
@@ -27,15 +28,16 @@ export default function CartPage() {
   }
 
   const confirmationBar = 
-  <div>
-    <Link to="/">Start New Order</Link>
-  </div>
+    <Link  className="bg-[#c9a24d] p-4 rounded-2xl hover:bg-[#b8943f] text-center" to="/">Start New Order</Link>
+
   
   const modal = <Modal onClose={handleClose} confirmationBar={confirmationBar}>
+    <div>
+    <p className='pb-10'>Your order has been successful</p>
     <ImCross 
     size={24} 
-    className="absolute top-4 right-4 cursor-pointer text-gray-600 hover:text-black" onClick={handleClose} />
-    <p>Your order has been successful</p>
+    className="absolute top-4 right-4 cursor-pointer text-gray-600 hover:text-red-500" onClick={handleClose} />
+    </div>
   </Modal>
 
   const renderedCartItems = cart.map((item) => {
@@ -55,7 +57,6 @@ export default function CartPage() {
              />
               <TiDeleteOutline className="text-[#a8a29e] hover:text-red-500 transition"  size={45} onClick={() => deleteFromCart(item.product.id)} />
             </div>
-           
           </div>
           <hr></hr>
       </div>

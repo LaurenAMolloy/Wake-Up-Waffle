@@ -10,7 +10,7 @@ interface ModalProps {
     confirmationBar?: ReactNode;
 }
 
-export default function Modal({ onClose, children, confirmationBar }: ModalProps) {
+export default function Modal({ children, confirmationBar }: ModalProps) {
 
     useEffect(() => {
         document.body.classList.add('overflow-hidden');
@@ -26,8 +26,8 @@ export default function Modal({ onClose, children, confirmationBar }: ModalProps
         className="fixed inset-0 bg-gray-300 opacity-80"
         onClick={(e) => e.stopPropagation()}
         ></div>
-        <div className="fixed inset-40 p-10 bg-white">
-            <div className="flex flex-col">
+        <div className="fixed inset-20 p-10 bg-white h-50">
+            <div className="flex flex-col items-center justify-center">
                 {children}
                 <div className="flex justify-end">{confirmationBar}</div>
             </div>
