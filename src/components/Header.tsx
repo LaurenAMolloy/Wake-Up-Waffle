@@ -22,9 +22,30 @@ export default function Header() {
 
       {/* desktoplinks */}
       <div className ="hidden md:flex gap-3">
-        <NavLink className="text-[#ffffff]" to="/">Home</NavLink>
-        <NavLink className="text-[#ffffff]" to="/menu">Menu</NavLink>
-        <NavLink className="text-[#ffffff]" to="/cart">Cart</NavLink>
+      <NavLink
+        to="/"
+        className={({ isActive }) =>
+        `text-white ${isActive ? "font-bold underline" : ""}`
+        }
+        >
+        Home
+        </NavLink>
+        <NavLink
+        to="/menu"
+        className={({ isActive }) =>
+        `text-white ${isActive ? "font-bold underline" : ""}`
+        }
+        >
+        Menu
+        </NavLink>
+        <NavLink
+        to="/cart"
+        className={({ isActive }) =>
+        `text-white ${isActive ? "font-bold underline" : ""}`
+        }
+        >
+        Cart
+        </NavLink>
       </div>
       
       {/* mobile icon */}
@@ -38,9 +59,14 @@ export default function Header() {
 
       <div className={`flex flex-col items-center gap-5 pt-10 fixed top-0 left-0 w-[60%] h-screen bg-gray-900 md:hidden z-50 transition-all duration-500 ease-in
       ${isOpen ? 'translate-x-0' : '-translate-x-full' }`}>
-        <NavLink className="text-[#ffffff]" to="/">Home</NavLink>
-        <NavLink className="text-[#ffffff]" to="/menu">Menu</NavLink>
-        <NavLink className="text-[#ffffff]" to="/cart">Cart</NavLink>
+        <NavLink
+        to="/"
+        className={({ isActive }) =>
+        `text-white ${isActive ? "font-bold underline" : ""}`
+        }
+        >
+        Home
+        </NavLink>
       </div>
     </div>
   )}
