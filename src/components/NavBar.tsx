@@ -1,7 +1,6 @@
 import WaffleLogo from '../assets/waffle-logo-black-and-white.png';
 import { RxHamburgerMenu } from "react-icons/rx";
 import { useState } from 'react';
-import { Link } from 'react-dom'
 
 export default function NavBar() {
   const[isOpen,setIsOpen] = useState(false);

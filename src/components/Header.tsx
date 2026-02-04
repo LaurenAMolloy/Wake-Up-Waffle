@@ -2,9 +2,10 @@ import WaffleLogo from '../assets/waffle-logo-black-and-white.png';
 import { RxHamburgerMenu } from "react-icons/rx";
 import { ImCross } from "react-icons/im";
 import { useState } from 'react';
-import { Link } from 'react-router'
+import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router'
 
-export default function NavBar() {
+export default function Header() {
   const[isOpen,setIsOpen] = useState(false);
 
   const handleNav = () => {
@@ -21,12 +22,9 @@ export default function NavBar() {
 
       {/* desktoplinks */}
       <div className ="hidden md:flex gap-3">
-        <p>link</p>
-        <p>link</p>
-        <p>link</p>
-        <p>link</p>
-        <p>link</p>
-        <p>link</p>
+        <NavLink className="text-[#ffffff]" to="/">Home</NavLink>
+        <NavLink className="text-[#ffffff]" to="/menu">Menu</NavLink>
+        <NavLink className="text-[#ffffff]" to="/cart">Cart</NavLink>
       </div>
       
       {/* mobile icon */}
@@ -38,14 +36,11 @@ export default function NavBar() {
           {isOpen ? <ImCross className="text-white" size={42} /> : <RxHamburgerMenu className="text-white" size={42} />}
       </button>
 
-      <div className={`fixed top-0 left-0 w-[60%] h-screen bg-gray-900 md:hidden z-50 transition-all duration-500 ease-in
+      <div className={`flex flex-col items-center gap-5 pt-10 fixed top-0 left-0 w-[60%] h-screen bg-gray-900 md:hidden z-50 transition-all duration-500 ease-in
       ${isOpen ? 'translate-x-0' : '-translate-x-full' }`}>
-        <p>link</p>
-        <p>link</p>
-        <p>link</p>
-        <p>link</p>
-        <p>link</p>
-        <p>link</p>
+        <NavLink className="text-[#ffffff]" to="/">Home</NavLink>
+        <NavLink className="text-[#ffffff]" to="/menu">Menu</NavLink>
+        <NavLink className="text-[#ffffff]" to="/cart">Cart</NavLink>
       </div>
     </div>
   )}

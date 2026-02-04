@@ -20,7 +20,7 @@ export default function CartPage() {
 
   const handleClick = () => {
     setShowModal(true);
-    //empty cart
+    //empty cart on completion
   }
 
   const handleClose = () => {
@@ -28,7 +28,7 @@ export default function CartPage() {
   }
 
   const confirmationBar = 
-    <Link  className="bg-[#c9a24d] p-4 rounded-2xl hover:bg-[#b8943f] text-center" to="/">Start New Order</Link>
+    <Link  className="bg-[#c9a24d] p-4 rounded-2xl hover:bg-[#b8943f] text-center" to="/menu">Start New Order</Link>
 
   
   const modal = <Modal onClose={handleClose} confirmationBar={confirmationBar}>
