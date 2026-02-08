@@ -16,13 +16,6 @@ export default function AddToCartSection({ product }: AddToCartSectionProps ) {
   //local state for quantity
   const [quantity, setQuantity] = useState(1)
   
-  //Check to see if item exists in cart
-  //Display how many?
-  const existingItem = cart.find(item => item.product.id === product.id)
-  const itemInCart = existingItem?.quantity
-  // const isInCart = Boolean(existingItem)
-  // console.log(isInCart)
-
   return (
     <div className="w-full flex flex-col gap-10 pb-10">
       <div className="flex w-full justify-evenly border-2 border-[#c9a24d] rounded-full items-center p-3">

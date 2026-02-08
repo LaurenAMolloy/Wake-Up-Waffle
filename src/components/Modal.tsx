@@ -20,6 +20,12 @@ export default function Modal({ children, confirmationBar }: ModalProps) {
         }
     }, []);
 
+    const modalContainer =document.querySelector('.modal-container')
+
+    if(!modalContainer) {
+        return null
+    }
+
   return ReactDOM.createPortal (
     <div>
         <div
@@ -33,6 +39,6 @@ export default function Modal({ children, confirmationBar }: ModalProps) {
             </div>
         </div>
     </div>,
-    document.querySelector('.modal-container')
+    modalContainer
   )
 }
