@@ -1,6 +1,6 @@
 import { FaCirclePlus } from "react-icons/fa6";
 import { FaMinusCircle } from "react-icons/fa";
-import { useCart } from '../context/useCart';
+import { useCart } from '../hooks/useCart';
 import type { Product } from '../types/product';
 import { useState } from 'react';
 import { Link } from 'react-router-dom'

@@ -4,7 +4,7 @@ import { ImCross } from "react-icons/im";
 import { useState } from 'react';
 import { Link } from 'react-router-dom'
 import { NavLink } from 'react-router'
-import { useCart } from '../context/useCart';
+import { useCart } from '../hooks/useCart';
 
 export default function Header() {
   const[isOpen,setIsOpen] = useState(false);

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useCart } from "../../context/useCart";
+import { useCart } from "../../hooks/useCart";
 import { TiDeleteOutline } from "react-icons/ti";
 import { FaMinusCircle } from "react-icons/fa";
 import { FaCirclePlus } from "react-icons/fa6";
