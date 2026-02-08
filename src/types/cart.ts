@@ -12,4 +12,5 @@ export type CartContextType = {
     deleteFromCart: (id: string) => void;
     incrementItem: (id: string) => void;
     decrementItem: (id: string) => void;
+    emptyCart: () => void
 }

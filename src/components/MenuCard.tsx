@@ -7,7 +7,7 @@ type MenuCardProps = {
 
 export default function MenuCard({ item }: MenuCardProps ) {
   return (
-    <article className="flex flex-col h-full bg-[#ffffff] rounded-2xl p-3 shadow-xl/20 ">
+    <article className="flex flex-col h-full bg-[#ffffff] rounded-2xl p-3 shadow-xl/20 gap-2 ">
         <img className=" w-full aspect-4/3 rounded-2xl object-cover object-center"  src={item.image} alt={item.name}></img>
         <h3>{item.name}</h3>
         <p className="font-bold">£{item.price}</p>

@@ -4,9 +4,16 @@ import { ImCross } from "react-icons/im";
 import { useState } from 'react';
 import { Link } from 'react-router-dom'
 import { NavLink } from 'react-router'
+import { useCart } from '../context/useCart';
 
 export default function Header() {
   const[isOpen,setIsOpen] = useState(false);
+
+  const { cart } = useCart();
+
+  const itemsInCart = cart.reduce((total, item) => {
+    return total += item.quantity
+  }, 0)
 
   const handleNav = () => {
     setIsOpen(prev => !prev)
@@ -44,7 +51,7 @@ export default function Header() {
         `text-white ${isActive ? "font-bold underline" : ""}`
         }
         >
-        Cart
+        Cart ({itemsInCart})
         </NavLink>
       </div>
       
@@ -54,7 +61,7 @@ export default function Header() {
         aria-label="Toggle navigation"
         className="md:hidden cursor-pointer"
         >
-          {isOpen ? <ImCross className="text-white" size={42} /> : <RxHamburgerMenu className="text-white" size={42} />}
+          {isOpen ? <ImCross className="text-white hover:text-red-500" size={42} /> : <RxHamburgerMenu className="text-white" size={42} />}
       </button>
 
       <div className={`flex flex-col items-center gap-5 pt-10 fixed top-0 left-0 w-[60%] h-screen bg-gray-900 md:hidden z-50 transition-all duration-500 ease-in
@@ -66,6 +73,22 @@ export default function Header() {
         }
         >
         Home
+        </NavLink>
+        <NavLink
+        to="/menu"
+        className={({ isActive }) =>
+        `text-white ${isActive ? "font-bold underline" : ""}`
+        }
+        >
+        Menu
+        </NavLink>
+        <NavLink
+        to="/cart"
+        className={({ isActive }) =>
+        `text-white ${isActive ? "font-bold underline" : ""}`
+        }
+        >
+        Cart ({itemsInCart})
         </NavLink>
       </div>
     </div>

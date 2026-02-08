@@ -11,10 +11,17 @@ type AddToCartSectionProps = {
 
 export default function AddToCartSection({ product }: AddToCartSectionProps ) {
   //use custom hook for cart functions
-  const { addToCart } = useCart();
+  const { addToCart, cart } = useCart();
   
   //local state for quantity
   const [quantity, setQuantity] = useState(1)
+  
+  //Check to see if item exists in cart
+  //Display how many?
+  const existingItem = cart.find(item => item.product.id === product.id)
+  const itemInCart = existingItem?.quantity
+  // const isInCart = Boolean(existingItem)
+  // console.log(isInCart)
 
   return (
     <div className="w-full flex flex-col gap-10 pb-10">
@@ -36,7 +43,9 @@ export default function AddToCartSection({ product }: AddToCartSectionProps ) {
         >Buy Now</Link>
         <button
         className="bg-[#c9a24d] p-4 rounded-2xl hover:bg-[#b8943f]" 
-        onClick={() => addToCart(product, quantity)}>Add to cart</button>
+        onClick={() => addToCart(product, quantity)}>
+          Add To Cart
+          </button>
       </div>
   </div>
   )

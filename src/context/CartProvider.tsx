@@ -5,6 +5,7 @@ import type { CartItem } from '../types/cart';
 import type { Product } from '../types/product';
 import { CartContext } from './CartContext';
 
+//Get cart from local storage or empty array
 const initCart = () => {
     const storedCart = localStorage.getItem("cart");
     return storedCart ? JSON.parse(storedCart) : []
@@ -20,6 +21,7 @@ type CartAction =
     | { type: 'DELETE_ITEM'; payload: { id: string } }
     | { type: 'DECREMENT_ITEM'; payload: { id: string } }
     | { type: 'INCREMENT_ITEM'; payload: { id: string } }
+    | { type: 'EMPTY_CART' }
 
 
 function cartReducer(cart: CartItem[], action: CartAction) {
@@ -63,6 +65,10 @@ function cartReducer(cart: CartItem[], action: CartAction) {
             item.product.id === action.payload.id
             ? { ...item, quantity: item.quantity + 1}
             : item)
+      }
+
+      case 'EMPTY_CART': {
+        return [];
       }
 
         default:
@@ -109,8 +115,14 @@ export function CartProvider({children}: CartProviderProps) {
         })
     }
 
+    function emptyCart(){
+        dispatch({
+            type: 'EMPTY_CART'
+        })
+    }
+
     return (
-      <CartContext.Provider value={{ cart, addToCart, deleteFromCart, incrementItem, decrementItem }}> 
+      <CartContext.Provider value={{ cart, addToCart, deleteFromCart, incrementItem, decrementItem, emptyCart }}> 
             {children}
       </CartContext.Provider> 
     ) 
