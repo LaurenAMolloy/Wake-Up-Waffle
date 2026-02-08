@@ -13,7 +13,7 @@ This project focuses on clean separation of concerns, strong TypeScript typing, 
 - Strongly typed application using **TypeScript**
 - Modular, maintainable component structure
 - Fully client-side single-page application (SPA)
-- Unit and integration tests (in progress)
+- integration tests (in progress)
 
 ---
 
@@ -42,6 +42,29 @@ src/
 ├── routes/         # React Router configuration and loaders
 ├── hooks/          # Custom hooks (e.g. useCart)
 
+## 📌 Future Improvements
+
+- **User Authentication**
+  - Add user accounts with login and registration
+  - Enable user-specific cart persistence and preferences
+
+- **Backend Integration**
+  - Replace local storage with a dedicated backend service
+  - Implement a REST API (or GraphQL) for cart and product data
+  - Persist user and cart data using **MongoDB**
+
+- **State Persistence**
+  - Sync cart state between sessions and devices
+  - Support authenticated and guest users
+
+- **Theming**
+  - Add **light mode / dark mode** support
+  - Persist theme preference across sessions
+
+- **General Enhancements**
+  - Improved accessibility
+  - Performance optimizations
+  - Expanded test coverage
 
 git clone https://github.com/your-username/your-repo-name.git
 cd your-repo-name
