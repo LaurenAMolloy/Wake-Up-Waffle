@@ -1,8 +1,8 @@
 //Combine Reducers with Context
 import { useReducer, useEffect } from 'react';
 import type { ReactNode } from 'react';
-import type { CartItem } from '@/types/cart';
-import type { Product } from '@/types/product';
+import type { CartItem } from '@/types/Cart';
+import type { Product } from '@/types/Product';
 import { CartContext } from '@/context/CartContext';
 
 //Get cart from local storage or empty array

@@ -1,7 +1,7 @@
 import { FaCirclePlus } from "react-icons/fa6";
 import { FaMinusCircle } from "react-icons/fa";
 import { useCart } from '../hooks/useCart';
-import type { Product } from '../types/product';
+import type { Product } from '../types/Product';
 import { useState } from 'react';
 import { Link } from 'react-router-dom'
 
@@ -11,7 +11,7 @@ type AddToCartSectionProps = {
 
 export default function AddToCartSection({ product }: AddToCartSectionProps ) {
   //use custom hook for cart functions
-  const { addToCart, cart } = useCart();
+  const { addToCart } = useCart();
   
   //local state for quantity
   const [quantity, setQuantity] = useState(1)

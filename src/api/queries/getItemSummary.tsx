@@ -1,6 +1,6 @@
 //import type interface
 //The shape of item summary
-import type { ItemSummary } from "../types/ItemSummary"
+import type { ItemSummary } from "@/api/types/ItemSummary"
 
 type MenuResponse = ItemSummary[]
 

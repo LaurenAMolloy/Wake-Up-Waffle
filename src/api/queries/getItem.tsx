@@ -1,4 +1,4 @@
-import type { Item } from "../types/item";
+import type { Item } from "@/api/types/Item";
 
 export default async function getItem (id: string): Promise<Item> {
     const response = await fetch("/data/menu.json");
