@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import type { ItemSummary } from "../api/types/ItemSummary";
+import type { ItemSummary } from "@/api/types/ItemSummary";
 
 type MenuCardProps = {
     item: ItemSummary

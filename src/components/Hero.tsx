@@ -1,4 +1,4 @@
-import HeroImg from '../assets/herowaffle.jpg'
+import HeroImg from '@/assets/herowaffle.jpg'
 import { Link } from 'react-router'
 
 export default function Hero() {

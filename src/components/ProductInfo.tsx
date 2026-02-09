@@ -1,4 +1,3 @@
-
 type ProductInfoProps = {
   name: string,
   description: string,

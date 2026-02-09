@@ -1,5 +1,5 @@
-import type { Item } from '../../api/types/Item';
-import getItem from '../../api/queries/getItem';
+import type { Item } from '@/api/types/Item';
+import getItem from '@/api/queries/getItem';
 import type { Params } from 'react-router-dom';
 
 interface LoaderArgs {

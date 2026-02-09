@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import { useCart } from "../../hooks/useCart";
+import { useCart } from "@/hooks/useCart";
 import { TiDeleteOutline } from "react-icons/ti";
 import { FaMinusCircle } from "react-icons/fa";
 import { FaCirclePlus } from "react-icons/fa6";
-import Modal from '../../components/Modal';
+import Modal from '@/components/Modal';
 import { Link } from 'react-router-dom';
 import { ImCross } from "react-icons/im";
 
@@ -34,7 +34,7 @@ export default function CartPage() {
     <Link  className="bg-[#c9a24d] p-4 rounded-2xl hover:bg-[#b8943f] text-center" to="/menu">Start New Order</Link>
 
   
-  const modal = <Modal onClose={handleClose} confirmationBar={confirmationBar}>
+  const modal = <Modal confirmationBar={confirmationBar}>
     <div>
     <p className='pb-10'>Your order has been successful</p>
     <ImCross 
