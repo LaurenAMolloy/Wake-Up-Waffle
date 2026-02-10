@@ -6,6 +6,7 @@ import { FaCirclePlus } from "react-icons/fa6";
 import Modal from '@/components/Modal';
 import { Link } from 'react-router-dom';
 import { ImCross } from "react-icons/im";
+import type { CartItem } from '@/types/Cart';
 
 export default function CartPage() {
   const { cart, deleteFromCart, incrementItem, decrementItem, emptyCart } = useCart();
@@ -16,7 +17,7 @@ export default function CartPage() {
   const cartLength = cart.length
   
   //Total Price
-  const totalOrder = cart.reduce((total, item) => {
+  const totalOrder = cart.reduce((total: number, item: CartItem) => {
   return total + item.product.price * item.quantity
   }, 0);
 

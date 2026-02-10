@@ -5,13 +5,15 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom'
 import { NavLink } from 'react-router'
 import { useCart } from '@/hooks/useCart';
+import type { CartItem } from '@/types/Cart';
 
 export default function Header() {
   const[isOpen,setIsOpen] = useState(false);
 
   const { cart } = useCart();
 
-  const itemsInCart = cart.reduce((total, item) => {
+  const itemsInCart = cart.reduce((total: number, item: CartItem ) => {
+    console.log(item)
     return total += item.quantity
   }, 0)
 
