@@ -17,5 +17,3 @@ export type CartContextType = {
   decrementItem: (id: string) => void
   emptyCart: () => void
 }
-
-
