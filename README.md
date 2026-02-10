@@ -29,19 +29,6 @@ This project focuses on clean separation of concerns, strong TypeScript typing, 
 
 ---
 
-## 📁 Project Structure
-
-```txt
-src/
-├── api/            # API logic and shared TypeScript types
-├── assets/
-├── components/     # Reusable UI components
-├── context/        # Cart context, reducer, and provider
-├── pages/          # Route-level components
-├── types/
-├── routes/         # React Router configuration and loaders
-├── hooks/          # Custom hooks (e.g. useCart)
-
 ## 📌 Future Improvements
 
 - **User Authentication**
@@ -60,6 +47,23 @@ src/
 - **Theming**
   - Add **light mode / dark mode** support
   - Persist theme preference across sessions
+
+---
+
+## 📁 Project Structure
+
+```txt
+src/
+├── api/            # API logic and shared TypeScript types
+├── assets/
+├── components/     # Reusable UI components
+├── context/        # Cart context, reducer, and provider
+├── pages/          # Route-level components
+├── types/
+├── routes/         # React Router configuration and loaders
+├── hooks/          # Custom hooks (e.g. useCart)
+
+
 
 - **General Enhancements**
   - Improved accessibility
