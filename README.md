@@ -60,7 +60,6 @@ src/
 ├── context/        # Cart context, reducer, and provider
 ├── pages/          # Route-level components
 ├── types/
-├── routes/         # React Router configuration and loaders
 ├── hooks/          # Custom hooks (e.g. useCart)
 
 
