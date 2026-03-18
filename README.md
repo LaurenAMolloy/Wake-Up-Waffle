@@ -1,7 +1,6 @@
 # 🛒 React Shopping Cart SPA
 
-A single-page application built with **React** to demonstrate modern front-end architecture, state management, and routing patterns.  
-This project focuses on clean separation of concerns, strong TypeScript typing, and scalable state handling using React Context and `useReducer`.
+A single-page application built with **React** to demonstrate modern front-end architecture, state management, and routing patterns. This project focuses on clean separation of concerns, strong TypeScript typing, and scalable state handling using React Context and `useReducer`.
 
 ---
 
