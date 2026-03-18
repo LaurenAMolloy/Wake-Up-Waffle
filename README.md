@@ -5,6 +5,11 @@ This project focuses on clean separation of concerns, strong TypeScript typing, 
 
 ---
 
+
+https://github.com/user-attachments/assets/10b7e38b-4360-4cf8-8241-190a8249a5af
+
+
+
 ## ✨ Features
 
 - Client-side routing with **React Router**
